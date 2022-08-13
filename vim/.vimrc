@@ -10,6 +10,8 @@ set tabstop=2
 set shiftwidth=2
 set number relativenumber
 
+set clipboard=unnamed
+
 call plug#begin()
     Plug 'preservim/nerdtree'
     Plug 'mattn/webapi-vim'
