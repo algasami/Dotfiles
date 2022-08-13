@@ -12,6 +12,7 @@ _A list of dotfiles for my Manjaro Linux configuration._
 - Overpass Mono
 - Neofetch
 - Feh
+- **Install GVim. Uninstall Vim.**
 
 ## Git
 
