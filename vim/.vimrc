@@ -10,7 +10,7 @@ set tabstop=2
 set shiftwidth=2
 set number relativenumber
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 call plug#begin()
     Plug 'preservim/nerdtree'

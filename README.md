@@ -10,6 +10,11 @@ _A list of dotfiles for my Manjaro Linux configuration._
 - Pywal
 - Vim-Plug
 - Overpass Mono
+- FiraCode Mono
+- Nerd Font
+- URxvt
+- Kitty
+- Fish
 - Neofetch
 - Feh
 - **Install GVim. Uninstall Vim.**
@@ -29,3 +34,17 @@ This section mainly focuses on the operation revolving around Git and remote hos
 ### Additional Notices
 
 **Type `Yes` when being asked to connect to the host**
+
+## Commit
+
+```bash
+bash commit_github.sh
+```
+
+## Use Commit
+
+_This action will entirely override all of your configuration files listed above with the Github version. Please proceed with caution.__
+
+```bash
+bash use_github.sh
+```
