@@ -17,6 +17,8 @@ _A list of dotfiles for my Manjaro Linux configuration._
 - Fish
 - Neofetch
 - Feh
+- GDB
+- Clang++
 - **Install GVim. Uninstall Vim.**
 
 ## Git
