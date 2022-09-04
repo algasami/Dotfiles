@@ -23,6 +23,9 @@ call plug#begin()
     Plug 'prabirshrestha/asyncomplete.vim'
     Plug 'keremc/asyncomplete-clang.vim'
     Plug 'puremourning/vimspector'
+    Plug 'vimsence/vimsence'
+    " Use release branch (recommend)
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 if executable('pyls')
@@ -72,9 +75,6 @@ autocmd User asyncomplete_setup call asyncomplete#register_source(
     \     }
     \ }))
 
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? asyncomplete#close_popup() . "\<cr>" : "\<cr>"
 imap <c-space> <Plug>(asyncomplete_force_refresh)
 " For Vim 8 (<c-@> corresponds to <c-space>):
 " imap <c-@> <Plug>(asyncomplete_force_refresh)
