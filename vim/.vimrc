@@ -1,10 +1,12 @@
 syntax on
+filetype plugin on
 
 nnoremap cpf i#include<iostream><Esc>ousing namespace std;<Esc>o<CR>int main(){<Esc>o<Esc>oreturn 0;<Esc>o}<Esc>kki
 nnoremap <Leader>compile :!clang++ % -o a.out<CR>
 nnoremap cpp :!clang++ % -o a.out && ./a.out<CR>
 
 au VimEnter *  NERDTree
+
 
 set expandtab
 set tabstop=2
@@ -24,9 +26,24 @@ call plug#begin()
     Plug 'keremc/asyncomplete-clang.vim'
     Plug 'puremourning/vimspector'
     Plug 'vimsence/vimsence'
-    " Use release branch (recommend)
+    Plug 'preservim/nerdcommenter'
+    Plug 'itchyny/lightline.vim'
+    " Themes
+    Plug 'zacanger/angr.vim'
+    Plug 'sonph/onehalf', { 'rtp': 'vim' }
+    " Themes End
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
+" Coc-nvim extensions
+let g:coc_global_extensions = [
+\ 'coc-discord',
+\ 'coc-clangd',
+\ 'coc-eslint',
+\ 'coc-tsserver',
+\ 'coc-json',
+\ 'coc-prettier',
+\ 'coc-css',
+\ ]
 
 if executable('pyls')
     " pip install python-language-server
@@ -91,3 +108,38 @@ nmap <Leader>dk <Plug>VimspectorRestart
 nmap <Leader>dh <Plug>VimspectorStepOut
 nmap <Leader>dl <Plug>VimspectorStepInto
 nmap <Leader>dj <Plug>VimspectorStepOver
+
+set t_Co=256
+let g:lightline = {
+      \ 'colorscheme': 'onehalfdark',
+      \ }
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+colorscheme onehalfdark
+hi Normal guibg=NONE ctermbg=NONE
+
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+set signcolumn=yes
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
