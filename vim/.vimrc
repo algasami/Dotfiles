@@ -1,7 +1,7 @@
 syntax on
 filetype plugin on
 
-nnoremap cpf i#include<iostream><Esc>ousing namespace std;<Esc>o<CR>int main(){<Esc>o<Esc>oreturn 0;<Esc>o}<Esc>kki
+nnoremap cpf i#include<bits/stdc++.h><Esc>ousing namespace std;<Esc>o<CR>int main(){<Esc>oios_base::sync_with_stdio(0);<Esc>ocin.tie(0); cout.tie(0);<Esc>o<Esc>o<Esc>oreturn 0;<Esc>o}<Esc>kki
 nnoremap <Leader>compile :!clang++ % -o a.out<CR>
 nnoremap cpp :!clang++ % -o a.out && ./a.out<CR>
 

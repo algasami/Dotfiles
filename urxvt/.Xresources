@@ -3,7 +3,7 @@ urxvt.font: \
   xft:FiraCode Mono:style=Normal:antialias=true;size=16;minspace=true \
 urxvt*scrollBar: 		false
 urxvt*matcher.button: 		1
-!urxvt.transparent: 		false
+urxvt.transparent: 		false
 !urxvt.shading:			20
 !urxvt*depth: 			32
 urxvt*background: 		rgba:4100/4800/5800/c800
