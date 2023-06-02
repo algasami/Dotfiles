@@ -11,4 +11,7 @@ return require('packer').startup(function(use)
 
     use 'preservim/nerdtree' -- tree
     use 'ryanoasis/vim-devicons' -- icons
+
+    use 'onsails/lspkind.nvim' -- vscode-like completion icons
+    use {'neoclide/coc.nvim', branch = "release"} -- autocomplete backend (LSP)
 end)

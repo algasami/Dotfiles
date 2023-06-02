@@ -22,7 +22,6 @@ source ~/znap_files/znap/znap.zsh  # Start Znap
 znap prompt sindresorhus/pure # speed up everything
 
 # `znap source` starts plugins.
-znap source marlonrichert/zsh-autocomplete
 znap source zsh-users/zsh-autosuggestions
 
 # Path to your oh-my-zsh installation.
